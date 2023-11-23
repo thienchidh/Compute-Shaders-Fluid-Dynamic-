@@ -39,8 +39,8 @@ public class FluidSimulater
     [Header("Simulation Settings")]
     [Space(2)]
     public uint          canvas_dimension     = 512;          // Resolution of the render target used at the end, this can be lower or higher than the actual simulation grid resoltion
-    public uint          simulation_dimension = 256;          // Resolution of the simulation grid
-    public uint          solver_iteration_num = 80;           // Number of iterations the solvers go through, increase this for more accurate simulation, and decrease for better performance
+    public uint          simulation_dimension = 64;          // Resolution of the simulation grid
+    public uint          solver_iteration_num = 40;           // Number of iterations the solvers go through, increase this for more accurate simulation, and decrease for better performance
     public float         grid_scale           = 1;            // The size of a grid, this is relevant for the calculations in relation to the value of velocity etc, you can and should just leave it as 1. 
     public float         time_step            = 1;            // Leave this also as one unless you want to view the simulation in slow motion or speed it up. Be aware that larger time steps can lead to an in accurate simulation
     public float         Viscosity            = 0.5f;         // This factor describes the fluids resistence towards motion, higher viscosity value will cause greater diffusion. You can seprate the viscosity of dye from velocity, atm both are the same
