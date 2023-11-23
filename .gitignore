@@ -221,3 +221,11 @@ $RECYCLE.BIN/
 # Windows shortcuts
 
 *.lnk
+
+android
+win32
+.vscode
+Packages/packages-lock.json
+ProjectSettings/boot.config
+UserSettings/EditorUserSettings.asset
+UserSettings/Layouts/default-2021.dwlt
