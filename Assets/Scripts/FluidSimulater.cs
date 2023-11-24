@@ -322,7 +322,7 @@ public class FluidSimulater
         }
         else
         {
-            Debug.LogError("Feature still needs to be implemented!");
+            // Debug.LogError("Feature still needs to be implemented!");
             //SetBufferOnCommandList(sim_command_buffer, dye_buffer, "_dye_buffer");
             //sim_command_buffer.SetGlobalTexture("_dye_source_texture", source_tex);
             //DispatchComputeOnCommandBuffer(sim_command_buffer, UserInputShader, _handle_add_dye_from_texture, simulation_dimension, simulation_dimension, 1);
@@ -367,7 +367,7 @@ public class FluidSimulater
 
         if (ping_as_results)                         // The Ping ponging ended on the helper buffer ping. Copy it to the buffer_to_diffuse buffer
         {
-            Debug.Log("Diffuse Ended on a Ping Target, now copying over the Ping to the buffer which was supposed to be diffused");
+            // Debug.Log("Diffuse Ended on a Ping Target, now copying over the Ping to the buffer which was supposed to be diffused");
             SetBufferOnCommandList(sim_command_buffer, FluidGPUResources.buffer_ping, "_Copy_Source");
             SetBufferOnCommandList(sim_command_buffer, buffer_to_diffuse,             "_Copy_Target");
             DispatchComputeOnCommandBuffer(sim_command_buffer, StructuredBufferUtilityShader, _handle_Copy_StructuredBuffer, simulation_dimension * simulation_dimension, 1, 1);
@@ -539,13 +539,13 @@ public class FluidSimulater
         // CHECKS
         if(!boundaryTexture)
         {
-            Debug.LogError("No valid texture was provided as boundary for the update arbitary boundery method.");
+            // Debug.LogError("No valid texture was provided as boundary for the update arbitary boundery method.");
             return;
         }
 
         if(boundaryTexture.width != boundaryTexture.height)
         {
-            Debug.LogError("The provided boundary texture to Update Abitrary Boundary Offset is not valid, it is non quardatic texture");
+            // Debug.LogError("The provided boundary texture to Update Abitrary Boundary Offset is not valid, it is non quardatic texture");
             return;
         }
         // -------------
@@ -591,13 +591,13 @@ public class FluidSimulater
         // CHECKS
         if(!boundaryTexture)
         {
-            Debug.LogError("No valid texture was provided as boundary for the update arbitary boundery method.");
+            // Debug.LogError("No valid texture was provided as boundary for the update arbitary boundery method.");
             return;
         }
 
         if(boundaryTexture.width != boundaryTexture.height)
         {
-            Debug.LogError("The provided boundary texture to Update Abitrary Boundary Offset is not valid, it is non quardatic texture");
+            // Debug.LogError("The provided boundary texture to Update Abitrary Boundary Offset is not valid, it is non quardatic texture");
             return;
         }
         // -------------
@@ -916,10 +916,10 @@ public class FluidSimulater
         cb.DispatchCompute(toDispatch, kernel, (int) group_nums.dispatch_x, (int) group_nums.dispatch_y, (int) group_nums.dispatch_z);
 
         // Debug
-        Debug.Log(string.Format("Attached the computeshader {0}, at kernel {1}, to the commandbuffer {2}." +
-            "Dispatch group numbers are, in x, y,z respectivly: {3}", 
-            toDispatch.name, ComputeShaderUtility.GetKernelNameFromHandle(toDispatch, kernel), cb.name,
-            group_nums.ToString()));
+        // Debug.Log(string.Format("Attached the computeshader {0}, at kernel {1}, to the commandbuffer {2}." +
+        //     "Dispatch group numbers are, in x, y,z respectivly: {3}", 
+        //     toDispatch.name, ComputeShaderUtility.GetKernelNameFromHandle(toDispatch, kernel), cb.name,
+        //     group_nums.ToString()));
     }
 }
 
